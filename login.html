@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="logincss.css">
+    <title>Account</title>
+</head>
+<body>
+    <script src="alert.js"></script>
+    <div class="container front">
+        <div class="top">
+            <span>ATINGLE</span>
+            <span2>Login To Your Account</span2>
+        </div>
+        <br>
+        <div class="form">
+            <form>
+                <div class="inputBox inputBoxFront">
+                    <label for="Username"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" id="username" placeholder="Username" class="input" required>
+                </div>
+                <div class="inputBox inputBoxFront">
+                    <label for="Password" class="password-label">
+                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-eye-slash eye-icon" onclick="togglePasswordVisibility()"></i>
+                    </label>
+                    <input type="password" id="Password" placeholder="Password" class="input" required minlength="8" maxlength="16">
+                </div>
+                <span4>
+                    <a href="forgot.html">Forgot Your Password?</a>
+                </span4>
+                <br>
+                <button type="submit" class="btn" onclick="disp()">
+                    Log in
+                </a>
+            </button>
+            <p id="result"></p>
+                <div class="user">New user? <span class="newUser">Register</span></div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container back">
+        <div class="top topBack">
+            <span3>ATINGLE</span3>
+        </div>
+        <div class="form formBack">
+            <form>
+                <div class="inputBox inputBoxBack">
+                    <label for="Name"><i class="fa-solid fa-t"></i></label>
+                    <input type="text" id="Name" placeholder="Name" class="input" required>
+                </div>
+                <div class="inputBox inputBoxBack">
+                    <label ><i class="fa-solid fa-envelope"></i></label>
+                    <input type="email" placeholder="Email id" class="input" required>
+                </div>
+                <div class="inputBox inputBoxBack">
+                    <label for="Username"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" id="Username" placeholder="Username" class="input" required>
+                </div>
+                <div class="inputBox inputBoxback">
+                    <label for="password" class="password-label">
+                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-eye-slash eyye-icon" onclick="toogglePasswordVisibility()"></i>
+                    </label>
+                    <input type="password" id="password" placeholder="Password" class="input" required maxlength="16" minlength="8">
+                </div>
+                <button type="submit" class="btn btnBack" onclick="disp2()">
+                    Register</a>
+                </button>
+                <p id="result"></p>
+                <div class="user userBack">Existing user? <span class="existingUser">log In</span></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let front = document.querySelector('.front');
+        let back = document.querySelector('.back');
+
+        let newUser = document.querySelector('.newUser');
+        let existingUser = document.querySelector('.existingUser');
+
+        newUser.addEventListener('click', function(){
+            front.style.zIndex = "1"
+            back.style.zIndex = "2"
+            front.style.transform = "rotateY(180deg)"
+            back.style.transform = "rotateY(0deg)"
+        })
+
+        existingUser.addEventListener('click', function(){
+            back.style.zIndex = "1"
+            front.style.zIndex = "2"
+            back.style.transform = "rotateY(180deg)"
+            front.style.transform = "rotateY(0deg)"
+        })
+    </script>
+</body>
+</html>
